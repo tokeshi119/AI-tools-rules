@@ -58,13 +58,15 @@ AIs-rules/
 # プロジェクトディレクトリに移動
 cd your-project
 
-# 既存の.cursor/rulesをバックアップ（必要に応じて）
+# 既存の.cursor/rulesがある場合はバックアップ
+# ※ ディレクトリが存在しない場合はこのステップをスキップしてください
 mv .cursor/rules .cursor/rules.backup
 
 # サブモジュールとして追加
 git submodule add https://github.com/tokeshi119/AI-tools-rules.git .cursor/rules
 
 # コミット
+git add .gitmodules .cursor/rules
 git commit -m "chore: .cursor/rulesをサブモジュール化"
 ```
 
