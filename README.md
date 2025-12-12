@@ -2,6 +2,8 @@
 
 Cursor AI用の共通ルールセット
 
+**🔗 Repository**: [https://github.com/tokeshi119/AI-tools-rules](https://github.com/tokeshi119/AI-tools-rules)
+
 ## 📖 概要
 
 このリポジトリは、複数のプロジェクトで共有するCursor AIのルール設定を管理するためのものです。
@@ -60,7 +62,7 @@ cd your-project
 mv .cursor/rules .cursor/rules.backup
 
 # サブモジュールとして追加
-git submodule add <このリポジトリのURL> .cursor/rules
+git submodule add https://github.com/tokeshi119/AI-tools-rules.git .cursor/rules
 
 # コミット
 git commit -m "chore: .cursor/rulesをサブモジュール化"
@@ -70,7 +72,7 @@ git commit -m "chore: .cursor/rulesをサブモジュール化"
 
 ```bash
 # このリポジトリをクローン
-git clone <このリポジトリのURL>
+git clone https://github.com/tokeshi119/AI-tools-rules.git
 
 # プロジェクトの.cursorディレクトリにコピー
 cp -r AIs-rules/.cursor/rules your-project/.cursor/
