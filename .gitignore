@@ -1,0 +1,21 @@
+# エディタ / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# OS
+Thumbs.db
+Desktop.ini
+
+# 一時ファイル
+*.tmp
+*.bak
+*.log
+
+# プロジェクト固有のカスタマイズ（バックアップ用）
+*.backup
+*.old
+

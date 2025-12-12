@@ -1,0 +1,14 @@
+---
+description: "AIの基本的な応答言語設定"
+alwaysApply: true
+---
+
+# General AI Behavior
+
+基本的に Cursor が生成する文章は日本語を優先してください。
+All AI-generated content should prefer Japanese unless otherwise specified.
+
+## コードコメント
+
+- コード内のコメントも日本語で記述してください
+- ただし、英語のみが適切な場合（ライブラリのドキュメントコメントなど）は英語でも可
