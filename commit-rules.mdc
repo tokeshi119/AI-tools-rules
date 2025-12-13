@@ -1,6 +1,6 @@
 ---
 description: "Gitコミットメッセージ生成時のルール。コミット関連の操作で適用。"
-alwaysApply: false
+alwaysApply: true
 ---
 
 # Commit Message Rule
