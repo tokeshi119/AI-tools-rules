@@ -48,6 +48,16 @@ AIs-rules/
 - **内容**: 
   - テスト関連の軽量ルール
 
+## 🚨 重要：実際の使い方
+
+### ⚠️ サブモジュールだけでは動きません！
+
+このサブモジュールを追加しただけでは、**親プロジェクトのコミットメッセージは日本語になりません。**
+
+サブモジュールは別の Git リポジトリとして扱われるため、**各プロジェクトのルートに `.cursorrules` を配置する必要があります。**
+
+詳細は **[実践ガイド](./docs/Cursor-Rules-Guide.md)** を参照してください。
+
 ## 🚀 使用方法
 
 ### 方法1: Gitサブモジュールとして追加（推奨）
@@ -65,9 +75,14 @@ mv .cursor/rules .cursor/rules.backup
 # サブモジュールとして追加
 git submodule add https://github.com/tokeshi119/AI-tools-rules.git .cursor/rules
 
+# 【重要】テンプレートをプロジェクトルートにコピー
+cp .cursor/rules/.cursorrules.template .cursorrules
+
 # コミット
-git add .gitmodules .cursor/rules
-git commit -m "chore: .cursor/rulesをサブモジュール化"
+git add .gitmodules .cursor/rules .cursorrules
+git commit -m "chore: Cursor AIルールを追加"
+
+# Cursor を再起動してルールを反映
 ```
 
 ### 方法2: 手動コピー
@@ -104,14 +119,22 @@ git commit -m "feat: ルールを更新"
 git push
 ```
 
+## 📚 ドキュメント
+
+- **[Cursor Rules 実践ガイド](./docs/Cursor-Rules-Guide.md)** - 詳細な使い方と検証結果
+  - コミットメッセージを日本語化する方法
+  - 実際に動作する構成
+  - トラブルシューティング
+
 ## 📝 カスタマイズ方法
 
 プロジェクト固有のルールは、各プロジェクトの`.cursor/rules/`に追加ファイルとして配置するか、
 `project-rules.md`を作成してオーバーライドしてください。
 
 ルールの優先順位：
-1. プロジェクト固有のルール（最優先）
-2. このリポジトリのグローバルルール
+1. `.cursorrules`（プロジェクトルート）- コミットメッセージ用（最優先・確実）
+2. プロジェクト固有のルール
+3. このリポジトリのグローバルルール
 
 ## 🤝 ルールの改善
 
@@ -131,5 +154,5 @@ Yuta Tokeshi
 
 ---
 
-最終更新: 2025-12-12
+最終更新: 2025-12-13
 
